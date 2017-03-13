@@ -135,8 +135,14 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
-        if(id == R.id.action_search) {
-            
+        if(id == R.id.action_ordina_cresc) {
+            adapter.setDataSet(dbHandler.getAllProductsOrderCresc());
+
+        }
+
+        if(id == R.id.action_ordina_decresc) {
+            adapter.setDataSet(dbHandler.getAllProductsOrderDecresc());
+
         }
 
         return super.onOptionsItemSelected(item);

@@ -8,4 +8,16 @@
         android:icon="@drawable/view_quilt"
         android:title="@string/action_settings"
         app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_ordina_cresc"
+        android:orderInCategory="100"
+        android:title="ordina cres"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_ordina_decresc"
+        android:orderInCategory="100"
+        android:title="ordina descr"
+        app:showAsAction="always" />
 </menu>

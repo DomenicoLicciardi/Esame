@@ -97,6 +97,57 @@ public class Database extends SQLiteOpenHelper {
         return productList;
     }
 
+    public ArrayList<Appunti> getAllProductsOrderCresc() {
+        ArrayList<Appunti> productList = new ArrayList<>();
+        //Select All Query
+        String selectQuery = "SELECT * FROM " + TABLE_APPUNTI + " ORDER BY " + KEY_TITOLO;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        //looping through all row adding to list
+        if(cursor.moveToFirst()) {
+            do {
+                Appunti appunti = new Appunti();
+                appunti.setId(Integer.parseInt(cursor.getString(0)));
+                appunti.setTitolo(cursor.getString(1));
+                appunti.setTesto(cursor.getString(2));
+                appunti.setData(cursor.getString(3));
+
+                //Adding note to list
+                productList.add(appunti);
+            }while(cursor.moveToNext());
+        }
+        db.close();
+        //return product list
+        return productList;
+    }
+
+    public ArrayList<Appunti> getAllProductsOrderDecresc() {
+        ArrayList<Appunti> productList = new ArrayList<>();
+        //Select All Query
+        String selectQuery = "SELECT * FROM " + TABLE_APPUNTI + " ORDER BY " + KEY_TITOLO + " DESC ";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        //looping through all row adding to list
+        if(cursor.moveToFirst()) {
+            do {
+                Appunti appunti = new Appunti();
+                appunti.setId(Integer.parseInt(cursor.getString(0)));
+                appunti.setTitolo(cursor.getString(1));
+                appunti.setTesto(cursor.getString(2));
+                appunti.setData(cursor.getString(3));
+
+                //Adding note to list
+                productList.add(appunti);
+            }while(cursor.moveToNext());
+        }
+        db.close();
+        //return product list
+        return productList;
+    }
     //Updating single product
     public int updateProduct(Appunti appunti) {
         SQLiteDatabase db = this.getWritableDatabase();
