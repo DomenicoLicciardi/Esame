@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Appunti</string>
+    <string name="titolo">Titolo degli appunti</string>
+    <string name="testo">Testo degli appunti</string>
+    <string name="data">13/03/2017</string>
+    <string name="action_edit">edit</string>
+    <string name="delete">delete</string>
+    <string name="action_settings">Setting</string>
+    <string name="preference_file_key">com.example.d_odo.appunti.LAYOUT_CONFIGURATION_KEY</string>
+
+</resources>
